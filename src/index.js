@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import faker from 'faker';
 
 // const App = () => {
 //   return (
@@ -13,6 +12,10 @@ import faker from 'faker';
 // };
 
 const App = () => {
+  window.navigator.geolocation.getCurrentPosition(
+    position => console.log(position),
+    err => console.log(err)
+  );
   return <div className="ui container comments">Seasons</div>;
 };
 
