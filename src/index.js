@@ -12,15 +12,21 @@ import ReactDOM from 'react-dom';
 // };
 
 class App extends Component {
-  componentWillMount() {
-    window.navigator.geolocation.getCurrentPosition(
-      position => console.log(position),
-      err => console.log(err)
-    );
+  constructor(props) {
+    super(props);
+
+    this.state = { lat: null };
   }
 
   render() {
-    <div className="ui container comments">Latitude: </div>;
+    window.navigator.geolocation.getCurrentPosition(
+      position => this.setState({ lat: position.coords.latitude }),
+      err => console.log(err)
+    );
+
+    return (
+      <div className="ui container comments">Latitude: {this.state.lat}</div>
+    );
   }
 }
 
