@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 // const App = () => {
@@ -11,12 +11,17 @@ import ReactDOM from 'react-dom';
 //   );
 // };
 
-const App = () => {
-  window.navigator.geolocation.getCurrentPosition(
-    position => console.log(position),
-    err => console.log(err)
-  );
-  return <div className="ui container comments">Seasons</div>;
-};
+class App extends Component {
+  componentWillMount() {
+    window.navigator.geolocation.getCurrentPosition(
+      position => console.log(position),
+      err => console.log(err)
+    );
+  }
+
+  render() {
+    <div className="ui container comments">Latitude: </div>;
+  }
+}
 
 ReactDOM.render(<App />, document.querySelector('#root'));
