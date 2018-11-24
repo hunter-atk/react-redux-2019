@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 // const App = () => {
 //   return (
@@ -34,7 +35,7 @@ class App extends Component {
         </div>
       );
     } else {
-      return <div className="ui container comments">Loading...</div>;
+      return <Spinner />;
     }
   }
 }
