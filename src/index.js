@@ -23,7 +23,7 @@ class App extends Component {
     );
   }
 
-  render() {
+  renderContent() {
     if (this.state.lat && !this.state.errorMessage) {
       return <SeasonDisplay lat={this.state.lat} month={this.state.month} />;
     } else if (!this.state.lat && this.state.errorMessage) {
@@ -31,6 +31,10 @@ class App extends Component {
     } else {
       return <Spinner message="Please accept location request..." />;
     }
+  }
+
+  render() {
+    return <div className="border-red">{this.renderContent()}</div>;
   }
 }
 
