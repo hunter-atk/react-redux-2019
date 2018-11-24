@@ -1,10 +1,13 @@
 import React from 'react';
 
 const SeasonDisplay = props => {
-  if (props.lat >= 0) {
-    return <div>You're in the northern hemisphere!</div>;
+  if (
+    (props.lat >= 0 && (props.month >= 3 && props.month <= 8)) ||
+    (props.lat <= 0 && (props.month < 3 && props.month > 8))
+  ) {
+    return <div>It's summertime!</div>;
   }
-  return <div>You're in the southern hemisphere!</div>;
+  return <div>It's wintertime!</div>;
 };
 
 export default SeasonDisplay;
