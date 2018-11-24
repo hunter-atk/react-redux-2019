@@ -27,15 +27,9 @@ class App extends Component {
     if (this.state.lat && !this.state.errorMessage) {
       return <SeasonDisplay lat={this.state.lat} month={this.state.month} />;
     } else if (!this.state.lat && this.state.errorMessage) {
-      return (
-        <div>
-          <div className="ui container comments">
-            Error: {this.state.errorMessage}
-          </div>
-        </div>
-      );
+      return <Spinner message={`Error: ${this.state.errorMessage}`} />;
     } else {
-      return <Spinner />;
+      return <Spinner message="Please accept location request..." />;
     }
   }
 }
