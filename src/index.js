@@ -20,8 +20,6 @@ class App extends Component {
       position => this.setState({ lat: position.coords.latitude }),
       err => this.setState({ errorMessage: err.message })
     );
-
-    this.setState({ month: new Date().getMonth() });
   }
 
   render() {
